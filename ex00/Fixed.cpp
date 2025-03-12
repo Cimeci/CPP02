@@ -6,7 +6,7 @@
 /*   By: inowak-- <inowak--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 08:46:27 by inowak--          #+#    #+#             */
-/*   Updated: 2025/03/11 16:34:27 by inowak--         ###   ########.fr       */
+/*   Updated: 2025/03/12 10:02:11 by inowak--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,10 @@ Fixed::Fixed(Fixed &a){
     fix = getRawBits();
 }
 
-Fixed& Fixed::operator=(const Fixed& a) {
+Fixed& Fixed::operator=(const Fixed& op) {
     std::cout << "Copy assignment operator called\n";
-    if (this != &a)
-        fix = a.getRawBits();
+    if (this != &op)
+        fix = op.getRawBits();
     return (*this);  
 }
 
