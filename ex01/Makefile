@@ -1,6 +1,6 @@
 CPP = c++
 
-CFLAGS = -g -Wall -Wextra -Werror -std=c++98
+CPPFLAGS = -g -Wall -Wextra -Werror -std=c++98
 
 NAME = canon
 
@@ -13,7 +13,7 @@ OBJS = $(addprefix $(OBJ_DIR)/, $(SRCS:.cpp=.o))
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CPP) $(CFLAGS) -o $(NAME) $(OBJS)
+	$(CPP) $(CPPFLAGS) -o $(NAME) $(OBJS)
 
 $(OBJ_DIR)/%.o: %.cpp
 	@mkdir -p $(OBJ_DIR)
