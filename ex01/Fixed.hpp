@@ -6,7 +6,7 @@
 /*   By: inowak-- <inowak--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 08:45:52 by inowak--          #+#    #+#             */
-/*   Updated: 2025/03/12 10:50:33 by inowak--         ###   ########.fr       */
+/*   Updated: 2025/03/13 17:47:28 by inowak--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,10 @@ class Fixed{
 		Fixed(int const nb_int);
 		Fixed(float const nb_float);
 
-		friend std::ostream& operator<<(std::ostream& os, const Fixed& obj);
 		
 		float	toFloat( void ) const;
 		int		toInt( void ) const;
-};
+	};
+	std::ostream& operator<<(std::ostream& os, const Fixed& obj);
 
 #endif

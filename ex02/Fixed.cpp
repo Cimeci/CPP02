@@ -6,7 +6,7 @@
 /*   By: inowak-- <inowak--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 08:46:27 by inowak--          #+#    #+#             */
-/*   Updated: 2025/03/13 14:08:37 by inowak--         ###   ########.fr       */
+/*   Updated: 2025/03/13 18:26:05 by inowak--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,28 +64,28 @@ std::ostream& operator<<(std::ostream& os, const Fixed& obj){
 
 // ex02
 
-bool operator>(const Fixed &a, const Fixed &b){
-	return (a.fix > b.fix);
+bool Fixed::operator>(const Fixed &comp){
+	return (fix > comp.fix);
 }
 
-bool operator<(const Fixed &a, const Fixed &b){
-	return (a.fix < b.fix);
+bool Fixed::operator<(const Fixed &comp){
+	return (fix < comp.fix);
 }
 
-bool operator>=(const Fixed &a, const Fixed &b){
-	return (a.fix >= b.fix);
+bool Fixed::operator>=(const Fixed &comp){
+	return (fix >= comp.fix);
 }
 
-bool operator<=(const Fixed &a, const Fixed &b){
-	return (a.fix <= b.fix);
+bool Fixed::operator<=(const Fixed &comp){
+	return (fix <= comp.fix);
 }
 
-bool operator==(const Fixed &a, const Fixed &b){
-	return a.fix == b.fix;
+bool Fixed::operator<=(const Fixed &comp){
+	return fix == comp.fix;
 }
 
-bool operator!=(const Fixed &a, const Fixed &b){
-	return !(a.fix == b.fix);
+bool Fixed::operator!=(const Fixed &comp){
+	return !(fix == comp.fix);
 }
 
 Fixed operator+(const Fixed &a, const Fixed &b){
@@ -94,21 +94,21 @@ Fixed operator+(const Fixed &a, const Fixed &b){
 	return c;
 }
 
-Fixed operator-(const Fixed &a, const Fixed &b){
+Fixed Fixed::operator-(const Fixed &a, const Fixed &b){
 	Fixed c;
 	c.setRawBits(a.getRawBits() - b.getRawBits());
 	return c;
 }
 
-Fixed operator*(const Fixed &a, const Fixed &b){
+Fixed Fixed::operator*(const Fixed &a, const Fixed &b){
 	Fixed c;
-	c.setRawBits((a.getRawBits() * b.getRawBits()) >> Fixed::nb);
+	c.setRawBits((a.getRawBits() * b.getRawBits()) >> nb);
 	return c;
 }
 
 Fixed operator/(const Fixed &a, const Fixed &b){
 	Fixed c;
-	c.setRawBits((a.getRawBits() << Fixed::nb) / b.getRawBits());
+	c.setRawBits((a.getRawBits() << nb) / b.getRawBits());
 	return c;
 }
 
