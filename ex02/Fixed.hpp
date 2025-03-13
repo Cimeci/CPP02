@@ -6,7 +6,7 @@
 /*   By: inowak-- <inowak--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 08:45:52 by inowak--          #+#    #+#             */
-/*   Updated: 2025/03/12 11:33:44 by inowak--         ###   ########.fr       */
+/*   Updated: 2025/03/13 13:46:45 by inowak--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,22 +39,27 @@ class Fixed{
 		
 		friend std::ostream& operator<<(std::ostream& os, const Fixed& obj);
 
-		bool operator>(Fixed& os, const Fixed& obj);
-		bool operator<(std::ostream& os, const Fixed& obj);
-		bool operator>=(std::ostream& os, const Fixed& obj);
-		bool operator<=(std::ostream& os, const Fixed& obj);
-		bool operator==(std::ostream& os, const Fixed& obj);
-		bool operator!=(std::ostream& os, const Fixed& obj);
+		friend bool operator>(const Fixed &a, const Fixed &b);
+		friend bool operator<(const Fixed &a, const Fixed &b);
+		friend bool operator>=(const Fixed &a, const Fixed &b);
+		friend bool operator<=(const Fixed &a, const Fixed &b);
+		friend bool operator==(const Fixed &a, const Fixed &b);
+		friend bool operator!=(const Fixed &a, const Fixed &b);
 
-		friend std::ostream& operator+(std::ostream& os, const Fixed& obj);
-		friend std::ostream& operator-(std::ostream& os, const Fixed& obj);
-		friend std::ostream& operator*(std::ostream& os, const Fixed& obj);
-		friend std::ostream& operator/(std::ostream& os, const Fixed& obj);
+		friend Fixed operator+(const Fixed &a, const Fixed &b);
+		friend Fixed operator-(const Fixed &a, const Fixed &b);
+		friend Fixed operator*(const Fixed &a, const Fixed &b);
+		friend Fixed operator/(const Fixed &a, const Fixed &b);
 
-		friend Fixed& operator++( Fixed& ); // prefix
-		friend Fixed& operator++( Fixed&, int ); // postfix
-		friend Fixed& operator--( Fixed& );
-		friend Fixed& operator--( Fixed&, int );
+		friend Fixed& operator++(Fixed &a); // prefix
+		friend Fixed operator++(Fixed &a, int); // postfix
+		friend Fixed& operator--(Fixed &a);
+		friend Fixed operator--(Fixed &a, int);
+
+		static Fixed min(Fixed &a, Fixed &b);
+		static Fixed min(const Fixed &a, const Fixed &b);
+		static Fixed max(Fixed &a, Fixed &b);
+		static Fixed max(const Fixed &a, const Fixed &b);
 };
 
 #endif
