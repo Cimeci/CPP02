@@ -6,7 +6,7 @@
 /*   By: inowak-- <inowak--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 08:45:52 by inowak--          #+#    #+#             */
-/*   Updated: 2025/03/13 17:37:29 by inowak--         ###   ########.fr       */
+/*   Updated: 2025/03/14 10:44:30 by inowak--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,30 +37,30 @@ class Fixed{
 		float	toFloat( void ) const;
 		int		toInt( void ) const;
 		
+		bool operator>(const Fixed &comp);
+		bool operator<(const Fixed &comp);
+		bool operator>=(const Fixed &comp);
+		bool operator<=(const Fixed &comp);
+		bool operator==(const Fixed &comp);
+		bool operator!=(const Fixed &comp);
+	
+		
+		Fixed operator+(const Fixed &comp);
+		Fixed operator-(const Fixed &comp);
+		Fixed operator*(const Fixed &comp);
+		Fixed operator/(const Fixed &comp);
+		
+		Fixed& operator++(void); // prefix
+		Fixed operator++(int); // postfix
+		Fixed& operator--(void);
+		Fixed operator--(int);
+		
+		static Fixed min(Fixed &a, Fixed &b);
+		static Fixed min(const Fixed &a, const Fixed &b);
+		static Fixed max(Fixed &a, Fixed &b);
+		static Fixed max(const Fixed &a, const Fixed &b);
 	};
+
 	std::ostream& operator<<(std::ostream& os, const Fixed& obj);
 	
-	bool operator>(const Fixed &a, const Fixed &b);
-	bool operator<(const Fixed &a, const Fixed &b);
-	bool operator>=(const Fixed &a, const Fixed &b);
-	bool operator<=(const Fixed &a, const Fixed &b);
-	bool operator==(const Fixed &a, const Fixed &b);
-	bool operator!=(const Fixed &a, const Fixed &b);
-
-	
-	Fixed operator+(const Fixed &a, const Fixed &b);
-	Fixed operator-(const Fixed &a, const Fixed &b);
-	Fixed operator*(const Fixed &a, const Fixed &b);
-	Fixed operator/(const Fixed &a, const Fixed &b);
-	
-	Fixed& operator++(Fixed &a); // prefix
-	Fixed operator++(Fixed &a, int); // postfix
-	Fixed& operator--(Fixed &a);
-	Fixed operator--(Fixed &a, int);
-	
-	static Fixed min(Fixed &a, Fixed &b);
-	static Fixed min(const Fixed &a, const Fixed &b);
-	static Fixed max(Fixed &a, Fixed &b);
-	static Fixed max(const Fixed &a, const Fixed &b);
-
 #endif

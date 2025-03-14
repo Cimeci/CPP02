@@ -6,7 +6,7 @@
 /*   By: inowak-- <inowak--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 08:45:52 by inowak--          #+#    #+#             */
-/*   Updated: 2025/03/13 17:53:47 by inowak--         ###   ########.fr       */
+/*   Updated: 2025/03/14 10:44:30 by inowak--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,4 +61,6 @@ class Fixed{
 		static Fixed max(const Fixed &a, const Fixed &b);
 	};
 
+	std::ostream& operator<<(std::ostream& os, const Fixed& obj);
+	
 #endif
